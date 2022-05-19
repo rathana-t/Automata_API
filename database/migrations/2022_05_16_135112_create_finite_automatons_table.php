@@ -15,7 +15,15 @@ return new class extends Migration
     {
         Schema::create('finite_automatons', function (Blueprint $table) {
             $table->id();
+            $table->integer('number_of_state');
+            $table->longText('start_state');
+            $table->longText('final_state');
+            $table->integer('number_of_symbol');
+            $table->longText('symbol');
+            $table->longText('transaction');
+            $table->longText('transaction_epsilon');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
