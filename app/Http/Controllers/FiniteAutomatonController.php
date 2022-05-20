@@ -15,7 +15,7 @@ class FiniteAutomatonController extends Controller
      */
     public function index()
     {
-        $data = DB::table('finite_automatons')->whereNull('deleted_at')->get();
+        $data = DB::table('finite_automatons')->whereNull('deleted_at')->orderBy('id', 'asc')->get();
         $data = $data->map(function ($item, $key) {
             return  [
                 'id' => $item->id,
